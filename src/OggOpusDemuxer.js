@@ -7,7 +7,7 @@ const OGGS_HEADER = Buffer.from('OggS'.split('').map(x => x.charCodeAt(0)));
 const OPUS_HEAD = Buffer.from('OpusHead'.split('').map(x => x.charCodeAt(0)));
 const OPUS_TAGS = Buffer.from('OpusTags'.split('').map(x => x.charCodeAt(0)));
 
-class OggOpusTransform extends Transform {
+class OggOpusDemuxer extends Transform {
   constructor() {
     super();
     this._remainder = null;
@@ -87,4 +87,4 @@ class OggOpusTransform extends Transform {
   }
 }
 
-module.exports = OggOpusTransform;
+module.exports = OggOpusDemuxer;
